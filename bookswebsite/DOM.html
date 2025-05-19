@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Web Page</title>
+  <style>
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading">Welcome to Dynamic Web Page</h1>
+  <p>This is a paragraph element.</p>
+  <img id="image" src="image1.jpg" alt="Image">
+  <button onclick="changeImage()">Change Image</button>
+  <div id="parent"></div>
+
+  <script>
+    // Get elements by various methods
+    var heading = document.getElementById('heading');
+    var paragraphs = document.getElementsByTagName('p');
+    var image = document.getElementById('image');
+    var parent = document.getElementById('parent');
+
+    // Change text using innerHTML property
+    heading.innerHTML = 'Dynamic Content';
+
+    // Change CSS properties
+    heading.style.color = 'blue';
+    heading.style.fontSize = '24px';
+
+    // Change the image source after clicking on a button
+    function changeImage() {
+      image.src = 'image2.jpg';
+    }
+
+    // Add a text node and attach it to a parent node
+    var textNode = document.createTextNode('This is a dynamically added text node.');
+    parent.appendChild(textNode);
+
+    // Delete a node
+    setTimeout(function() {
+      parent.removeChild(textNode);
+    }, 5000); // Delete the node after 5 seconds
+  </script>
+</body>
+</html>
